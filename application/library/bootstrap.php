@@ -42,13 +42,13 @@ $db = new Database(
 
 global $cache;
 if (class_exists('Memcache')) {
-	$cache = new Memcache;
-	$cache->connect(
-	    config('memcached.server.name'),
-	    config('memcached.server.port')
-	);
+    $cache = new Memcache;
+    $cache->connect(
+        config('memcached.server.name'),
+        config('memcached.server.port')
+    );
 } else {
-	$cache = new Cache;
+    $cache = new Cache;
 }
 
 // set timezone to UTC
